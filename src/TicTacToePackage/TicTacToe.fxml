@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TicTacToePackage.TicTacToeController">
+   <children>
+      <GridPane prefHeight="316.0" prefWidth="352.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="buttonONE_LABEL" mnemonicParsing="false" onAction="#buttonONE" prefHeight="109.0" prefWidth="128.0">
+               <font>
+                  <Font size="36.0" />
+               </font></Button>
+            <Button fx:id="buttonTWO_LABEL" mnemonicParsing="false" onAction="#buttonTWO" prefHeight="109.0" prefWidth="128.0" GridPane.columnIndex="1">
+               <font>
+                  <Font size="36.0" />
+               </font></Button>
+            <Button fx:id="buttonTHREE_LABEL" mnemonicParsing="false" onAction="#buttonTHREE" prefHeight="109.0" prefWidth="128.0" GridPane.columnIndex="2">
+               <font>
+                  <Font size="36.0" />
+               </font></Button>
+            <Button fx:id="buttonFOUR_LABEL" mnemonicParsing="false" onAction="#buttonFOUR" prefHeight="109.0" prefWidth="128.0" GridPane.rowIndex="1">
+               <font>
+                  <Font size="36.0" />
+               </font></Button>
+            <Button fx:id="buttonFIVE_LABEL" mnemonicParsing="false" onAction="#buttonFIVE" prefHeight="109.0" prefWidth="128.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="36.0" />
+               </font></Button>
+            <Button fx:id="buttonSIX_LABEL" mnemonicParsing="false" onAction="#buttonSIX" prefHeight="109.0" prefWidth="128.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="36.0" />
+               </font></Button>
+            <Button fx:id="buttonSEVEN_LABEL" mnemonicParsing="false" onAction="#buttonSEVEN" prefHeight="109.0" prefWidth="128.0" GridPane.rowIndex="2">
+               <font>
+                  <Font size="36.0" />
+               </font></Button>
+            <Button fx:id="buttonEIGHT_LABEL" mnemonicParsing="false" onAction="#buttonEIGHT" prefHeight="109.0" prefWidth="128.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="36.0" />
+               </font></Button>
+            <Button fx:id="buttonNINE_LABEL" mnemonicParsing="false" onAction="#buttonNINE" prefHeight="109.0" prefWidth="128.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="36.0" />
+               </font></Button>
+         </children>
+      </GridPane>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
