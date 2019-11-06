@@ -1,5 +1,6 @@
 # JavaFX-TicTacToe
 JavaFX desktop Tic Tac Toe game.
+The application is is not yet finished.
 
 Written in Java SE 8 using:
 
