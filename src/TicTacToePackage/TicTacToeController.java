@@ -1,13 +1,17 @@
 /**
  * Status: not finished.
  *
- * To Do List:
+ * Notes:
  *
- *      1) CheckWin() method not working properly. Doesn't check 'O' win.
- *         Additionally doesn't work for draw when 'O' is last move and
- *         results in 'O' win streak.
- *         Straight 'X' will work, and draw works if 'X' is last move.
- *         Everything else is done.
+ *      1) Everything works properly, however, when AI wins it doesn't really
+ *      show the row of 'O'. Instead it simply proceeds to next round. Every
+ *      round after the first always starts with 'O' and this is not desirable.
+ *
+ * Future Work:
+ *
+ *      1)Possibly call winning path method here in the future.
+ *          a) take increment of moveCount_O into consideration.
+ *          b) do research into CSS, see if winning path can be highlighted.
  *
  *
  * */
@@ -78,9 +82,6 @@ public class TicTacToeController {
 
         //If button empty, place X.
         if(ticTacGrid[0][0] != 'X' && ticTacGrid[0][0] != 'O'){
-
-            System.out.println("1");
-
 
             buttonONE_LABEL.setText("X");
             ticTacGrid[0][0] = 'X'; //Adjust grid.
@@ -321,17 +322,11 @@ public class TicTacToeController {
 
         //GENERATE RANDOM
 		/*
-			Generate x,y int variables and assign random number to them.
-			Establish x,y coordinate, if coordinate is 'empty', assign char 'O' there.
-			Set Text as letter 'O' on the appropriate buttonLabel for user.
-		*/
+		 *	Generate x,y int variables and assign random number to them.
+		 *	Establish x,y coordinate, if coordinate is 'empty', assign char 'O' there.
+		 *	Set Text as letter 'O' on the appropriate buttonLabel for user.
+		 */
 
-            /**
-             * FUTURE WORK:
-             *  1)Possibly call winning path method here in the future.
-             *      a) take increment of moveCount_O into consideration.
-             *      b) do research into CSS, see if winning path can be highlighted.
-             * */
 
         boolean generated = false;
         do
@@ -427,6 +422,17 @@ public class TicTacToeController {
 
         }while(!generated);
 
+
+        //After generating random, check if there is either a
+        //win or draw, and reset round. For example, if the
+        //last move being played is by AI 'O'.
+        if(checkDraw(ticTacGrid)){
+            clearTicTac(ticTacGrid);
+        }
+        if(checkWin(ticTacGrid)){
+            clearTicTac(ticTacGrid);
+        }
+
        return ticTacGrid;
     }
 
@@ -439,6 +445,7 @@ public class TicTacToeController {
                ticTacGrid[i][j] = BLANK;
            }
        }
+
 
        //Clear board.
        buttonONE_LABEL.setText("");
@@ -534,8 +541,9 @@ public class TicTacToeController {
 
     private boolean checkDraw(char[][] ticTacGrid){
         /*
-        * Method Description here...
-        */
+         * Check every index to see if the grid is a draw. Check whether
+         * every index is not blank.
+         */
 
         //Local Variables
         boolean draw = false;
